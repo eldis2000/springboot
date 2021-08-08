@@ -3,18 +3,22 @@ package com.tmon.study.reposigory;
 import com.tmon.study.domain.Member;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@SpringBootTest
+@Transactional
 class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
-    @AfterEach
-    public void afterEach() {
-        repository.clearStore();
-    }
+//    @AfterEach
+//    public void afterEach() {
+//        repository.clearStore();
+//    }
 
     @Test
     void save() {
